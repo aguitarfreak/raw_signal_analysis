@@ -121,7 +121,7 @@ values = zip(values[::2], values[1::2])
 #create a placeholder for the genotype
 values_with_genotype = []
 for x in values:
-    values_with_genotype.append([x]+[0])
+    values_with_genotype.append([x]+['ro'])
 values = values_with_genotype
 if(verbose):print '5',
 ##create dicionary from headers and values
@@ -153,6 +153,8 @@ if(options.gen_filename!=""):
             sys.exit(1)
     
     if(verbose):print 'Preprocessing data (gen file). 4 stages - ',
+    #remove last element from row, which is an empty string
+    temp_row.pop()
     #change values to floats
     values = map(float, temp_row[5:])
     if(verbose):print '1',
