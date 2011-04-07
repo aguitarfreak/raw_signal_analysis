@@ -161,7 +161,6 @@ if(options.gen_filename!=""):
     if(verbose):print '1',
     #create triple of the values
     values = list(group(values,3))
-    print values
     if(verbose):print '2',
     #specify color depending on the triple
     subject_color = []
